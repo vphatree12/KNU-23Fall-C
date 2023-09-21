@@ -6,15 +6,18 @@
 int main() {
 	double x = 0, y = 0;
 	int count = 0, circle = 0;
-
+	int checkpoint 10000000;
 	srand(time(NULL));
 
 	while (count < 1000000000) {
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
-		count++;
-		double circle = x * x + y * y;
+		count++;	//난수 생성 함수
+
+		if (count % checkpoint == 0) {
+
+		}
 
 	}
-	//난수 생성 함수
+	
 }
