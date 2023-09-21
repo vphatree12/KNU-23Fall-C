@@ -24,9 +24,8 @@ int main() {
 		if (count % checkpoint == 0) {
 			k = (double)circle / count;
 
-			int nemo = progress / 5;
-
 			// 5 % 단위 진행 상태 보기
+			int nemo = progress / 5;
 			for (int n = 0; n < 20; n++) {
 				if (n < nemo)
 					printf("■");
