@@ -13,6 +13,8 @@ int main() {
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
 		count++;
+		double circle = x * x + y * y;
+
 	}
 	//난수 생성 함수
 }
