@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void calculator(int selector, int num1, int num2) {
 	if (selector < 1 || selector > 4) {
 		printf(" ERROR !!");
@@ -20,6 +21,22 @@ void calculator(int selector, int num1, int num2) {
 		div(num1, num2);
 }
 
+void sum(double a, double b) {
+	double result = a + b;
+	printf("%lf + %lf :%lf", a, b, result);
+}
+void sub(double a, double b) {
+	double result = a - b;
+	printf("%lf - %lf :%lf", a, b, result);
+}
+void mul(double a, double b) {
+	double result = a * b;
+	printf("%lf * %lf :%lf", a, b, result);
+}
+void div(double a, double b) {
+	double result = a / b;
+	printf("%lf / %lf :%lf", a, b, result);
+}
 int main() {
 	int selector, num1, num2;
 
