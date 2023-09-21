@@ -22,8 +22,8 @@ int main() {
 		if (count % checkpoint == 0) {
 			// 진행 원주율 표시
 			ㅠ = 4.0 * (double)circle / count;
-			progress = (int)((double)count / all);
-			printf("%d%진행.. 원주율 : %lf ", progress, ㅠ);
+			progress = (double)count / (double)all * 100;
+			printf("%02d%%진행.. 원주율 : %lf ", progress, ㅠ);
 
 			// 5% 단위 진행 상태 보기
 			int nemo = progress / 5;
