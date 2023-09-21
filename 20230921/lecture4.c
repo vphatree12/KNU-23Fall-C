@@ -9,7 +9,7 @@ int main() {
 
 	srand(time(NULL));
 
-	while (count < 10000000) {
+	while (count < 1000000000) {
 		x = (double)rand() / (double)RAND_MAX;
 		y = (double)rand() / (double)RAND_MAX;
 		count++;
