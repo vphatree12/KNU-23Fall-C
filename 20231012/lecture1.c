@@ -1,8 +1,8 @@
 #include <stdio.h>
-void swap(int* a, int* b) {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+void swap(int* pa, int* pb) {
+    int temp = *pa;
+    *pa = *pb;
+    *pb = temp;
 }
 int main() {
     int x = 333;
