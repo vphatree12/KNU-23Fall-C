@@ -5,7 +5,8 @@ typedef struct _NODE {
 	struct _NODE* next;
 } NODE;
 
-void print_list(NODE* head) {//노드 프린트 함수
+/*노드 출력 함수*/
+void print_list(NODE* head) {
 	NODE* p = head->next;
 	while (p != NULL) {
 		printf("%d ", p->data);
@@ -13,14 +14,17 @@ void print_list(NODE* head) {//노드 프린트 함수
 	}
 	printf("\n");
 }
-void insert_node_first(NODE* head, int data) {//노드 앞에 삽입 함수
+
+/*노드 앞에 삽입 함수*/
+void insert_node_first(NODE* head, int data) {
 	NODE* new_node = (NODE*)malloc(sizeof(NODE));
 	new_node->data = data;
 	new_node->next = head->next;
 	head->next = new_node;
 }
 
-void insert_node_last(NODE* head, int data) {//노드 삽입 함수
+/*노드 삽입 함수*/
+void insert_node_last(NODE* head, int data) {
 	NODE* p = head;
 	while (p->next != NULL) {
 		p = p->next;
@@ -30,12 +34,16 @@ void insert_node_last(NODE* head, int data) {//노드 삽입 함수
 	new_node->next = p->next;
 	p->next = new_node;
 }
-void delete_node_first(NODE* head) {//노드 삭제 함수 앞
+
+/*노드 삭제 함수 앞*/
+void delete_node_first(NODE* head) {
 	NODE* p = head->next->next;
 	free(head->next);
 	head->next = p;
 }
-void delete_node_last(NODE* head) {//노드 삭제 함수 뒤
+
+/*노드 삭제 함수 뒤*/
+void delete_node_last(NODE* head) {
 	NODE* p = head->next;
 	NODE* p_prev = head;
 	while (p->next != NULL) {
@@ -44,6 +52,7 @@ void delete_node_last(NODE* head) {//노드 삭제 함수 뒤
 	}free(p);
 	p_prev->next = NULL;
 }
+
 int main() {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->next = NULL;	//(*head).next = NULL 과 같다
@@ -68,6 +77,7 @@ int main() {
 	insert_node_last(head, 4);
 	insert_node_last(head, 5); 
 	print_list(head);
+
 	insert_node_first(head, 6);
 	print_list(head);
 
