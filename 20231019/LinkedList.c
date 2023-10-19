@@ -5,13 +5,25 @@ typedef struct _NODE {
 	struct _NODE* next;
 } NODE;
 
-void print_list(NODE* head) {
+void print_list(NODE* head) {//노드 프린트 함수
 	NODE* p = head->next;
 	while (p != NULL) {
 		printf("%d ", p->data);
 		p = p->next;
 	}
 }
+
+void insert_node(NODE* head, int data) {//노드 삽입 함수
+	NODE* p = head;
+	while (p->next != NULL) {
+		p = p->next;
+	}
+	NODE* new_node = (NODE*)malloc(sizeof(NODE));
+	new_node->data = data;
+	new_node->next = p->next;
+	p->next = new_node;
+}
+
 int main() {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->next = NULL;	//(*head).next = NULL 과 같다
@@ -30,6 +42,8 @@ int main() {
 	n3->data = 3;
 	n3->next = n2->next;
 	n2->next = n3;
+
+	insert_node(head, 4);
 
 	print_list(head);
 
