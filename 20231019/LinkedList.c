@@ -11,6 +11,7 @@ void print_list(NODE* head) {//노드 프린트 함수
 		printf("%d ", p->data);
 		p = p->next;
 	}
+	printf("\n");
 }
 void insert_node_first(NODE* head, int data) {//노드 앞에 삽입 함수
 	NODE* new_node = (NODE*)malloc(sizeof(NODE));
@@ -29,7 +30,20 @@ void insert_node_last(NODE* head, int data) {//노드 삽입 함수
 	new_node->next = p->next;
 	p->next = new_node;
 }
-
+void delete_node_first(NODE* head) {//노드 삭제 함수 앞
+	NODE* p = head->next->next;
+	free(head->next);
+	head->next = p;
+}
+void delete_node_last(NODE* head) {//노드 삭제 함수 뒤
+	NODE* p = head->next;
+	NODE* p_prev = head;
+	while (p->next != NULL) {
+		p_prev = p;
+		p = p->next;
+	}free(p);
+	p_prev->next = NULL;
+}
 int main() {
 	NODE* head = (NODE*)malloc(sizeof(NODE));
 	head->next = NULL;	//(*head).next = NULL 과 같다
@@ -49,10 +63,19 @@ int main() {
 	n3->next = n2->next;
 	n2->next = n3;
 
+	print_list(head);
+
 	insert_node_last(head, 4);
 	insert_node_last(head, 5); 
+	print_list(head);
 	insert_node_first(head, 6);
 	print_list(head);
 
+	delete_node_first(head);
+	delete_node_first(head);
+	print_list(head);
+
+	delete_node_last(head);
+	print_list(head);
 	return 0;
 }
