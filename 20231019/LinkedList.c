@@ -12,8 +12,14 @@ void print_list(NODE* head) {//노드 프린트 함수
 		p = p->next;
 	}
 }
+void insert_node_first(NODE* head, int data) {//노드 앞에 삽입 함수
+	NODE* new_node = (NODE*)malloc(sizeof(NODE));
+	new_node->data = data;
+	new_node->next = head->next;
+	head->next = new_node;
+}
 
-void insert_node(NODE* head, int data) {//노드 삽입 함수
+void insert_node_last(NODE* head, int data) {//노드 삽입 함수
 	NODE* p = head;
 	while (p->next != NULL) {
 		p = p->next;
@@ -43,8 +49,9 @@ int main() {
 	n3->next = n2->next;
 	n2->next = n3;
 
-	insert_node(head, 5);
-
+	insert_node_last(head, 4);
+	insert_node_last(head, 5); 
+	insert_node_first(head, 6);
 	print_list(head);
 
 	return 0;
