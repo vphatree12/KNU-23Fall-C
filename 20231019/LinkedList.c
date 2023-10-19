@@ -43,7 +43,7 @@ int main() {
 	n3->next = n2->next;
 	n2->next = n3;
 
-	insert_node(head, 4);
+	insert_node(head, 5);
 
 	print_list(head);
 
