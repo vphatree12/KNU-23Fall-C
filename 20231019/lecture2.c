@@ -1,5 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+
+struct Student {
+	int sno;
+	char name[10];
+	int score;
+};
+
 int main() {
 	int n;
 	char name[10];
@@ -17,11 +24,11 @@ int main() {
 		scanf_s("%d", &(s[i].score));
 	}
 	int sum = 0;
-	for (int i = 1; i <= n; i++) {
+	for (int i = 0; i < n; i++) {
 		sum += s[i].score;
 	}
-	printf("%d\n", sum);
-	free(score);
-	score = NULL;
+	printf("%.2f\n", sum);
+	free(s);
+	s = NULL;
 	return 0;
 }
